@@ -1,12 +1,5 @@
 
 
-# afraid.org
-route 50.23.197.0 255.255.255.0 net_gateway
-route 69.197.18.161 255.255.255.255 net_gateway
-route 78.46.65.204 255.255.255.255 net_gateway
-route 204.140.20.21 255.255.255.255 net_gateway
-route 69.42.215.252 255.255.255.255 net_gateway
-route 50.23.197.94 255.255.255.0 net_gateway
 route 1.0.0.0 255.255.240.0 net_gateway
 route 1.0.32.0 255.255.224.0 net_gateway
 route 1.1.0.0 255.255.192.0 net_gateway
