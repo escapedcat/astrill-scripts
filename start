@@ -1,0 +1,7 @@
+#!/bin/bash
+home=`dirname $0`
+set +e 
+$home/stop
+set -e
+set -u
+$home/run > /var/log/astrill 2>&1&

@@ -1,0 +1,6 @@
+#!/bin/bash
+set +e
+echo "killing vpn clients ... "
+killall asovpnc
+echo "waiting for route cleanup ... "
+sleep 5

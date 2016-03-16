@@ -1,0 +1,10 @@
+#!/bin/bash
+set -u
+home=`dirname $0`
+cd ${home}
+date
+echo "Restarting VPN client!"
+${home}/configure
+${home}/asovpnc $home/config.out &
+echo $! > $home/asovpnc.pid	
+
