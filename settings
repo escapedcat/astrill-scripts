@@ -1,10 +1,16 @@
 #!/bin/bash
+# the name of the pppoe config to be used by poffpon
 PPPOE=dsl-provider
 home=`dirname $0`
+# where to find the configs to chose from
 CONFIG_DIR=${home}/configs.active
+# where to find route configurations to be appended to the end
 ROUTE_DIR=${home}/routes.d
+# additional settings, inserted before the routes
 EXTRA_CONFIG_DIR=${home}/config.d
+# what directory to write logs to
 LOG_DIR=${home}/logs
+# the actual log file name
 LOG_FILE=${LOG_DIR}/astrill_`date +%m-%d_%H-%M`.log
 
 
