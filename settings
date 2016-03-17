@@ -11,6 +11,9 @@ EXTRA_CONFIG_DIR=${home}/config.d
 # what directory to write logs to
 LOG_DIR=${home}/logs
 # the actual log file name
+# with the date:
 LOG_FILE=${LOG_DIR}/astrill_`date +%m-%d_%H-%M`.log
+# without the date
+LOG_FILE=${LOG_DIR}/astrill.log
 
 
