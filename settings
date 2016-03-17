@@ -1,0 +1,10 @@
+#!/bin/bash
+PPPOE=dsl-provider
+home=`dirname $0`
+CONFIG_DIR=${home}/configs.active
+ROUTE_DIR=${home}/routes.d
+EXTRA_CONFIG_DIR=${home}/config.d
+LOG_DIR=${home}/logs
+LOG_FILE=${LOG_DIR}/astrill_`date +%m-%d_%H-%M`.log
+
+

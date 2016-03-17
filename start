@@ -1,7 +1,9 @@
 #!/bin/bash
 home=`dirname $0`
+. ${home}/settings
 set +e 
 $home/stop
+mkdir -p ${LOG_DIR}
 set -e
 set -u
-$home/run > /var/log/astrill 2>&1&
+$home/run > ${LOG_FILE} 2>&1&

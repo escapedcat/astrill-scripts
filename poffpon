@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "killing VPN ... "
+home=`dirname $0`
+. ${home}/settings
+${home}/stop
+echo "stopping pppoe ... "
+poff
+sleep 3
+echo "starting pppoe ... "
+pon ${PPPOE}

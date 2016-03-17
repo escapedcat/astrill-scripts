@@ -3,14 +3,15 @@ set -e
 set -u
 echo "creating config ... "
 home=`dirname $0`
-f=`find ${home}/configs.active | shuf -n1`
+. ${home}/settings
+f=`find ${CONFIG_DIR} | shuf -n1`
 echo "using $f"
 ln -s -f $f $home/current
 cat $home/current |grep -v "max-route" |grep -v "route "|grep -v "dev " > $home/config.out
 echo "dev-type tun" >>$home/config.out
 echo "dev astrill-tun0" >>$home/config.out
 echo "max-routes 2000" >>$home/config.out
-for r in `find $home/routes.d -type f `; do
+for r in `find ${ROUTE_DIR} -type f `; do
 	echo "adding routes: $r"
     cat $r >> $home/config.out
 done
