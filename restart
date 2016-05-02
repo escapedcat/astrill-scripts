@@ -1,0 +1,6 @@
+home=`dirname $0`
+. ${home}/settings
+set +e
+${home}/stop  >> ${LOG_FILE} 2>&1&
+${home}/start  >> ${LOG_FILE} 2>&1&
+service dnsmasq restart  >> ${LOG_FILE} 2>&1&

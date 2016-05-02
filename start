@@ -2,8 +2,10 @@
 home=`dirname $0`
 . ${home}/settings
 set +e 
-$home/stop
 mkdir -p ${LOG_DIR}
+echo "killing vpn clients ... "
+killall asovpnc
+sleep 3 
 set -e
 set -u
-$home/run > ${LOG_FILE} 2>&1&
+$home/run >> ${LOG_FILE} 2>&1&

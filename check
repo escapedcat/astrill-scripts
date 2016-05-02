@@ -1,0 +1,15 @@
+#!/bin/bash
+home=`dirname $0`
+. ${home}/settings
+set +e
+/sbin/ifconfig |/bin/grep astr > /dev/null 2>&1
+state=$?
+if [ ${state} -eq 1 ]; then
+        echo " ### VPN is down, restarting!" >> ${LOG_FILE} 2>&1
+        echo " ### calling stop" >> ${LOG_FILE} 2>&1
+        ${home}/stop
+        echo " ### calling start" >> ${LOG_FILE} 2>&1
+        ${home}/start
+else
+        echo " ### VPN is up!" >> ${LOG_FILE} 2>&1
+fi
